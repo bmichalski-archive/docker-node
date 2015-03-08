@@ -1,2 +1,5 @@
 #!/bin/bash
-docker run --rm -it bmichalski/node:0.12
+docker run \
+-it \
+bmichalski/node:0.12 \
+bash -c "su - r"

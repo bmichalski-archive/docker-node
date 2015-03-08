@@ -5,7 +5,7 @@ COPY conf/root/install.sh /root/install.sh
 RUN chmod u+x /root/install.sh
 
 RUN \
-  base/configure-proxy.sh && \
+  base/configure.sh && \
   apt-get install -y \
     wget \
   && \
@@ -18,4 +18,4 @@ ENV HOME /root
 
 WORKDIR /root
 
-CMD ["bash", "-c", "su - r"]
+CMD bash 
