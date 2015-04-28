@@ -1,4 +1,4 @@
-ESCAPED_NODE_VERSION=$(echo 0.12.0 | sed -rn 's/\./\\./pg') && \
+ESCAPED_NODE_VERSION=$(echo 0.12.2 | sed -rn 's/\./\\./pg') && \
 SED_ARG="s/^<.*>v($ESCAPED_NODE_VERSION.*)\/<\/.*>.*/\1/p" && \
 NODE_VERSION=`wget -O- -q http://nodejs.org/dist/ | sed -rn $SED_ARG` && \
 SED_ARG="s/^<.*>(node-v$ESCAPED_NODE_VERSION-linux-x64\.tar\.gz)<\/.*>.*/\1/p" && \
