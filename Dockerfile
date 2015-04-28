@@ -1,17 +1,21 @@
-FROM bmichalski/base
+FROM ubuntu:14.04
+
+RUN \
+  apt-get update && \
+  apt-get install -y \
+    wget
+
+RUN \
+  adduser --disabled-password --gecos '' r && \
+  adduser r sudo && \
+  echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
 COPY conf/root/install.sh /root/install.sh
 
-RUN chmod u+x /root/install.sh
+RUN \
+  chmod u+x /root/install.sh
 
 RUN \
-  base/configure.sh && \
-  apt-get install -y \
-    wget \
-  && \
-  adduser --disabled-password --gecos '' r && \
-  adduser r sudo && \
-  echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers && \
   /root/install.sh
 
 ENV HOME /root
