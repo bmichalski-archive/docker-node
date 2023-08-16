@@ -12,11 +12,9 @@ RUN \
 
 COPY conf/root/install.sh /root/install.sh
 
-RUN \
-  chmod u+x /root/install.sh
+RUN chmod u+x /root/install.sh
 
-RUN \
-  /root/install.sh
+RUN /root/install.sh
 
 ENV HOME /root
 

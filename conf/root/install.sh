@@ -11,4 +11,3 @@ NODE_FOLDER=/opt/node/`echo $ARCHIVE | sed -rn $SED_ARG` && \
 ln -s $NODE_FOLDER /opt/node/node && \
 echo "export PATH=$PATH:/opt/node/node/bin" >> /root/.profile && \
 echo "export PATH=$PATH:/opt/node/node/bin" >> /home/r/.profile
-
